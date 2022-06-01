@@ -1,5 +1,9 @@
 @extends('layouts.admin')
 
+@section('title')
+    Pemasukan
+@endsection
+
 @section('content')
 <div class="container-fluid py-4">
     <div class="row px-4">

@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\RekapController;
 use App\Http\Controllers\PemasukanController;
 use App\Http\Controllers\PengeluaranController;
 use App\Models\Pemasukan;
@@ -20,6 +21,7 @@ use GuzzleHttp\Middleware;
 require __DIR__.'/auth.php';
 
 Route::get('/', [DashboardController::class, 'index'])->name('dashboard')->middleware('auth');
+Route::get('/rekap/{tahun}', [RekapController::class, 'index'])->name('rekap')->middleware('auth');
 
 Route::middleware(['auth'])->group(function () {
     Route::group(['prefix' => 'pemasukan'], function()

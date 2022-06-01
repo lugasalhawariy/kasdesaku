@@ -19,7 +19,7 @@ class PemasukanFactory extends Factory
         return [
             'jumlah' => random_int(1000, 5000000),
             'keterangan' => $this->faker->name(),
-            'created_at' => $this->faker->dateTimeBetween('-4 month', '+7 month')
+            'created_at' => $this->faker->dateTimeBetween('-2 years', '+2 years')
         ];
     }
 }
