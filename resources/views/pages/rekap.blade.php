@@ -29,7 +29,7 @@
                                 <label for="tahun" class="form-label">Masukan Tahun</label>
                                 <input type="number" class="form-control" name="tahun" placeholder="Isi data berupa tahun">
                             </div>
-                            <div class="mb-3">
+                            <div class="mb-1">
                                 <button type="submit" class="w-100 btn btn-warning">Cari</button>
                             </div>
                         </form>
@@ -37,21 +37,22 @@
                 </div>
             </div>
         </div>
-        <div class="row mt-2 p-4">
-            <div class="col-lg-12 mb-lg-0 mb-4">
-              <div class="card z-index-2 h-100">
+    <div class="row mt-2 p-4">
+        <div class="col-lg-12 mb-lg-0 mb-4">
+            <div class="card z-index-2 h-100">
                 <div class="card-header pb-0 pt-3 bg-transparent">
-                  <h6 class="text-capitalize">Sales overview</h6>
-                  <p class="text-sm mb-0">
-                    <i class="fa fa-arrow-up text-success"></i>
-                    <span class="font-weight-bold">Grafik</span> tahun 
-                    {{ $tahun }}
-                  </p>
+                    <h6 class="text-capitalize">Sales overview</h6>
+                    <p class="text-sm mb-0">
+                        <i class="fa fa-arrow-up text-success"></i>
+                        <span class="font-weight-bold">Grafik</span> tahun 
+                        {{ $tahun }}
+                    </p>
                 </div>
                 <div class="card-body p-3">
-                  <div class="chart">
-                    <canvas id="chart-line" class="chart-canvas" height="400"></canvas>
-                  </div>
+                    <div class="chart">
+                        <canvas id="chart-line" class="chart-canvas" height="400"></canvas>
+                    </div>
+                    <a href="{{ route('rekap-excel') }}" class="btn btn-small btn-success w-100">Rekapitulasi Excel</a>
                 </div>
             </div>
         </div>
@@ -83,7 +84,7 @@
         "Jan", "Feb", "Mar", "Apr", "Mei", "Jun", "Jul", "Agt", "Sept", "Okt", "Nov", "Des"
       ],
       datasets: [{
-          label: "Pemasukan tahun " + tanggal.getFullYear(),
+          label: "Pemasukan",
           tension: 0.4,
           borderWidth: 0,
           pointRadius: 0,
@@ -96,7 +97,7 @@
 
       },
       {
-          label: "Pengeluaran tahun " + tanggal.getFullYear(),
+          label: "Pengeluaran",
           tension: 0.4,
           borderWidth: 0,
           pointRadius: 0,

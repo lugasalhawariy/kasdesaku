@@ -7,11 +7,10 @@
 @section('content')
 <div class="container-fluid py-4">
     <div class="row px-4">
-        <div class="col-3">
-            <a href="{{ route('pengeluaran.create') }}" class="btn btn-warning w-100">Tambah Data Pengeluaran</a>
-        </div>
-        <div class="col-3">
-            <a href="{{ route('pengeluaran.export') }}" class="btn btn-success w-60">EXCEL</a>
+        <div class="col-12">
+            <a href="{{ route('pengeluaran.create') }}" class="btn btn-warning w-30">Tambah Data Pengeluaran</a>
+            <a href="{{ route('pengeluaran.export') }}" class="btn btn-success w-30">Download Excel</a>
+            <a href="{{ route('pengeluaran.drop') }}" class="btn btn-danger w-30" onclick="return confirm('Yakin hapus semuanya?')">Remove All</a>
         </div>
     </div>
     <div class="row p-4">

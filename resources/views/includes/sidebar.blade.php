@@ -34,6 +34,7 @@
             </a>
         </li>
         <li class="nav-item">
+            {{-- data yang dikirim berdasarkan tahun saat ini --}}
             <a class="nav-link " href="{{ route('rekap', Carbon\Carbon::now()->year) }}">
             <div class="icon icon-shape icon-sm border-radius-md text-center me-2 d-flex align-items-center justify-content-center">
                 <i class="ni ni-app text-info text-sm opacity-10"></i>
@@ -43,14 +44,6 @@
         </li>
         <li class="nav-item mt-3">
             <h6 class="ps-4 ms-2 text-uppercase text-xs font-weight-bolder opacity-6">Account pages</h6>
-        </li>
-        <li class="nav-item">
-            <a class="nav-link " href="./pages/profile.html">
-            <div class="icon icon-shape icon-sm border-radius-md text-center me-2 d-flex align-items-center justify-content-center">
-                <i class="ni ni-single-02 text-dark text-sm opacity-10"></i>
-            </div>
-            <span class="nav-link-text ms-1">Profile</span>
-            </a>
         </li>
             
         @auth
@@ -71,6 +64,6 @@
             </div>
         </div>
         </div>
-        <a href="https://www.instagram.com/lugasdev/" target="_blank" class="btn btn-info btn-sm w-100 mb-3">Developer</a>
+        <a href="https://www.instagram.com/okkyoktapianiii/" target="_blank" class="btn btn-info btn-sm w-100 mb-3">Developer</a>
     </div>
 </aside>

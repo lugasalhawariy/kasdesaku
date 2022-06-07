@@ -22,8 +22,12 @@ require __DIR__.'/auth.php';
 
 Route::get('/', [DashboardController::class, 'index'])->name('dashboard')->middleware('auth');
 Route::get('/rekap/{tahun}', [RekapController::class, 'index'])->name('rekap')->middleware('auth');
+Route::get('/seed', [RekapController::class, 'seed'])->name('seed')->middleware('guest');
+
 
 Route::middleware(['auth'])->group(function () {
+    Route::get('/rekap-excel', [RekapController::class, 'rekap'])->name('rekap-excel');
+
     Route::group(['prefix' => 'pemasukan'], function()
     {
         Route::get('/', [PemasukanController::class, 'index'])->name('pemasukan.index');
@@ -33,6 +37,7 @@ Route::middleware(['auth'])->group(function () {
         Route::get('/edit/{id}', [PemasukanController::class, 'edit'])->name('pemasukan.edit');
         Route::put('/update/{id}', [PemasukanController::class, 'update'])->name('pemasukan.update');
 
+        Route::get('/drop', [PemasukanController::class, 'drop'])->name('pemasukan.drop');
         Route::get('/export-excel', [PemasukanController::class, 'export'])->name('pemasukan.export');
     });
 
@@ -45,6 +50,7 @@ Route::middleware(['auth'])->group(function () {
         Route::get('/edit/{id}', [PengeluaranController::class, 'edit'])->name('pengeluaran.edit');
         Route::put('/update/{id}', [PengeluaranController::class, 'update'])->name('pengeluaran.update');
 
+        Route::get('/drop', [PengeluaranController::class, 'drop'])->name('pengeluaran.drop');
         Route::get('/export-excel', [PengeluaranController::class, 'export'])->name('pengeluaran.export');
     });
 });

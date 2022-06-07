@@ -7,6 +7,7 @@ use App\Models\Pengeluaran;
 use Illuminate\Http\Request;
 
 use DataTables;
+use Illuminate\Support\Facades\Auth;
 use Maatwebsite\Excel\Facades\Excel;
 
 class PengeluaranController extends Controller
@@ -52,6 +53,17 @@ class PengeluaranController extends Controller
         $data->delete();
 
         return back();
+    }
+
+    public function drop()
+    {
+        $user = Auth::user();
+        if($user->role == "superadmin"){
+            Pengeluaran::truncate();
+            return back();
+        }else{
+            return abort(403);
+        }        
     }
 
     public function edit($id)

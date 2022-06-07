@@ -7,6 +7,8 @@ use App\Models\Pemasukan;
 use Illuminate\Http\Request;
 
 use DataTables;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Schema;
 use Maatwebsite\Excel\Facades\Excel;
 
 class PemasukanController extends Controller
@@ -52,6 +54,17 @@ class PemasukanController extends Controller
         $data->delete();
 
         return back();
+    }
+
+    public function drop()
+    {
+        $user = Auth::user();
+        if($user->role == "superadmin"){
+            Pemasukan::truncate();
+            return back();
+        }else{
+            return abort(403);
+        }        
     }
 
     public function edit($id)
