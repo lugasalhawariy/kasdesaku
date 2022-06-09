@@ -3,7 +3,7 @@
         <i class="fas fa-times p-3 cursor-pointer text-secondary opacity-5 position-absolute end-0 top-0 d-none d-xl-none" aria-hidden="true" id="iconSidenav"></i>
         <a class="navbar-brand m-0" href=" https://demos.creative-tim.com/argon-dashboard/pages/dashboard.html " target="_blank">
         <img src="{{ asset('argon-dashboard-master/assets/img/logo-ct-dark.png') }}" class="navbar-brand-img h-100" alt="main_logo">
-        <span class="ms-1 font-weight-bold">Sikasdesa</span>
+        <span class="ms-1 font-weight-bold">Kasdesaku</span>
         </a>
     </div>
     <hr class="horizontal dark mt-0">
@@ -64,6 +64,6 @@
             </div>
         </div>
         </div>
-        <a href="https://www.instagram.com/okkyoktapianiii/" target="_blank" class="btn btn-info btn-sm w-100 mb-3">Developer</a>
+        <a href="https://www.instagram.com/lugasdev" target="_blank" class="btn btn-info btn-sm w-100 mb-3">Developer</a>
     </div>
 </aside>
